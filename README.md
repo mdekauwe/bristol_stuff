@@ -4,6 +4,7 @@ To compile on bristol (BlueCrystal), the netcdf libs are not built with intel so
 
 You need to add this to CABLE's build.ksh
 
+```
 host_bc4l()
 {
     export NCDIR='/mnt/storage/software/libraries/gnu/netcdf-4.7.3/lib'
@@ -16,10 +17,13 @@ host_bc4l()
     cd ../
     build_status
 }
+```
 
 There is also a conflict in the loaded modules (I think related to the anaconda stuff), so:
 
+```
 $ module purge
 $ module add libs/netcdf/4.7.3
+```
 
 *Only* load these, the netcdf one also loads gfortran. This works for single processor compiles...
